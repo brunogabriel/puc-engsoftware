@@ -1,0 +1,13 @@
+package io.github.brunogabriel.apimicroservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ApiMicroserviceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ApiMicroserviceApplication.class, args);
+	}
+
+}
