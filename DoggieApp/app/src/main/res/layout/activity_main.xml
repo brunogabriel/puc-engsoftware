@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:textAlignment="center"
+                app:titleTextColor="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <io.github.brunogabriel.doggieapp.shared.view.NonSwipeViewPager
+            android:id="@+id/view_pager"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_marginBottom="56dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            app:elevation="4dp"
+            app:itemIconTint="@drawable/bottom_nav_selector"
+            app:itemTextColor="@drawable/bottom_nav_selector"
+            app:itemBackground="@android:color/white"
+            app:menu="@menu/menu_bottom_navigation"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

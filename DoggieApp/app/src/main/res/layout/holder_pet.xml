@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/pet_image"
+                android:contentDescription="@string/pet_image"
+                app:layout_constraintDimensionRatio="H,4:3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/pet_name"
+                android:textColor="@color/colorGrayLevel1"
+                android:fontFamily="@font/robotomedium"
+                android:text="Brand new ladies"
+                android:textSize="18sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/pet_image" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"/>
+
+        <ImageView
+                android:id="@+id/pet_services_image"
+                android:src="@drawable/ic_dog_in_front_of_a_man"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:tint="@color/colorGrayLevel1"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/pet_name" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+        <TextView
+                android:id="@+id/pet_services_text"
+                android:text="130 Serviços"
+                android:tint="@color/colorGrayLevel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/pet_services_image"
+                app:layout_constraintBottom_toBottomOf="@+id/pet_services_image" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/pet_services_image"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
