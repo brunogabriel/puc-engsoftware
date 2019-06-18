@@ -1,5 +1,6 @@
 package io.github.brunogabriel.doggieapp.main.petlist
 
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import io.github.brunogabriel.doggieapp.R
+import io.github.brunogabriel.doggieapp.petdetails.PetDetailsActivity
 import io.github.brunogabriel.doggieapp.shared.extensions.pxToDp
 import io.github.brunogabriel.doggieapp.shared.models.Pet
 import io.github.brunogabriel.doggieapp.shared.persistence.UserAuthenticationPersistence
@@ -42,7 +44,9 @@ class PetListFragment : Fragment(), PetListContract.View {
         recycler_view.apply {
             visibility = View.VISIBLE
             layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-            adapter = PetListAdapter(pets)
+            adapter = PetListAdapter(pets) {
+                startActivity(Intent(context, PetDetailsActivity::class.java).putExtra(PetDetailsActivity.PET_DETAILS, it))
+            }
             addItemDecoration(EqualGapItemDecoration(2, 16.pxToDp()))
         }
     }

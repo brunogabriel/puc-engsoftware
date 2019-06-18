@@ -2,14 +2,21 @@
   {
     "id": 1,
     "clientId": "bruno",
-    "type": "cachorro",
+    "type": "Cachorro",
     "name": "Bob",
-    "gait": "pequeno",
-    "allergies": [],
-    "habits": [
-      "Caminhar as 16hs"
+    "gait": "Pequeno",
+    "allergies": [
+      "Chocolate",
+      "Cerveja",
+      "Milho"
     ],
-    "preferences": [],
+    "habits": [
+      "Caminhar às 16hs"
+    ],
+    "preferences": [
+      "Bananas",
+      "Maçã"
+    ],
     "images": [
       "http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png",
       "https://blogbergvet.com.br/wp-content/uploads/2016/11/DSC00794.jpg"
@@ -21,8 +28,12 @@
     "clientId": "bruno",
     "type": "cavalo",
     "name": "Pé de Pano",
-    "allergies": [],
-    "habits": [],
+    "allergies": [
+      "Couve"
+    ],
+    "habits": [
+      "Usar acessórios pretos"
+    ],
     "preferences": [
       "Gosta de se alimentar com milho",
       "Não gosta de beterraba"

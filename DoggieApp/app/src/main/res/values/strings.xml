@@ -30,4 +30,14 @@
 
     <string name="welcome_pattern">Olá, %s</string>
     <string name="pataz_message">Você possui 102 Pzs no programa fidelidade</string>
+    <string name="type">Tipo</string>
+    <string name="gait">Porte</string>
+    <string name="allergies">Alergias</string>
+    <string name="habits">Hábitos</string>
+    <string name="preferences">Preferências</string>
+    <string name="duration">Realização/Duração</string>
+    <string name="paid_value">Valor pago</string>
+    <string name="service_owner">Responsável</string>
+    <string name="products">Produtos</string>
+    <string name="annotations">Anotações</string>
 </resources>

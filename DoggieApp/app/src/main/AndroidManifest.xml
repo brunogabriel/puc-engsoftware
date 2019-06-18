@@ -31,7 +31,9 @@
                   android:label="@string/my_pets"
                   android:screenOrientation="portrait"/>
 
-        <activity android:name=".petdetails.PetDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".petdetails.PetDetailsActivity"
+                  android:label=""
+                  android:screenOrientation="portrait"/>
 
     </application>
 

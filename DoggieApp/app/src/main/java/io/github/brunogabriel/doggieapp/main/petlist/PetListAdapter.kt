@@ -12,7 +12,8 @@ import kotlinx.android.synthetic.main.holder_pet.view.*
 /**
  * Created by brunogabriel on 2019-06-15.
  */
-class PetListAdapter(private val pets: List<Pet>) : RecyclerView.Adapter<PetListAdapter.PetViewHolder>() {
+class PetListAdapter(private val pets: List<Pet>,
+                     private val onPetSelected: (pet: Pet) -> Unit) : RecyclerView.Adapter<PetListAdapter.PetViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PetViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder_pet, parent, false)
@@ -26,8 +27,12 @@ class PetListAdapter(private val pets: List<Pet>) : RecyclerView.Adapter<PetList
     override fun onBindViewHolder(holder: PetViewHolder, position: Int) {
         holder.bind(pets[position])
     }
+
     inner class PetViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(pet: Pet) = with(itemView) {
+            setOnClickListener {
+                onPetSelected(pet)
+            }
             if (pet.images?.isNotEmpty() == true) {
                 pet_image.loadImage(pet.images[0])
             } else {

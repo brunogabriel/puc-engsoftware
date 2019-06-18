@@ -61,6 +61,8 @@ dependencies {
     implementation "io.reactivex:rxjava:$rx_java_version"
     implementation 'com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2'
 
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+
     testImplementation 'junit:junit:4.12'
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
 
