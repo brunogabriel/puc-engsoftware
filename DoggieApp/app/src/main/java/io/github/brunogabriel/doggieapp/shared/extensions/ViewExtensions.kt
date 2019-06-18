@@ -1,6 +1,7 @@
 package io.github.brunogabriel.doggieapp.shared.extensions
 
 import android.widget.ImageView
+import com.google.android.material.textfield.TextInputEditText
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
@@ -13,4 +14,8 @@ fun ImageView.loadImage(url: String, callback: Callback? = null, canFit: Boolean
         .load(url)
         .apply { if(canFit) fit() }
         .into(this, callback)
+}
+
+fun TextInputEditText.stringText(): String {
+    return text?.toString() ?: ""
 }

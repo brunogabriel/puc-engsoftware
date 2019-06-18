@@ -17,12 +17,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField "String", "base_url", '"https://gateway.marvel.com:443"'
+            buildConfigField "String", "base_url", '"http://192.168.1.40:8080"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
-            buildConfigField "String", "base_url", '"https://gateway.marvel.com:443"'
+            buildConfigField "String", "base_url", '"http://192.168.1.40:8080"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -32,6 +32,10 @@ android {
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
     }
+}
+
+androidExtensions {
+    experimental = true
 }
 
 dependencies {
@@ -55,16 +59,11 @@ dependencies {
     // rx
     implementation "io.reactivex:rxandroid:$rx_android_version"
     implementation "io.reactivex:rxjava:$rx_java_version"
+    implementation 'com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2'
 
     testImplementation 'junit:junit:4.12'
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
 
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-    /**
-     * ext.retrofit_version = '2.3.0'
-     *     ext.okhttp_version = '3.9.1'
-     *     ext.rx_android_version = '1.2.1'
-     *     ext.rx_java_version = '1.2.6'
-     */
 }

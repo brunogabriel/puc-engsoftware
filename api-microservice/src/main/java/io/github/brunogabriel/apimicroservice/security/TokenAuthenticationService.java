@@ -1,5 +1,7 @@
 package io.github.brunogabriel.apimicroservice.security;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.brunogabriel.apimicroservice.domain.UserAuthenticated;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -30,7 +32,13 @@ public class TokenAuthenticationService {
         String token = TOKEN_PREFIX + " " + jwt;
         response.addHeader(HEADER_STRING, token);
         try {
-            response.getOutputStream().print(token);
+            UserAuthenticated userAuthenticated = new UserAuthenticated();
+            userAuthenticated.username = username;
+            userAuthenticated.token = jwt;
+            ObjectMapper objectMapper = new ObjectMapper();
+            String authenticationResponse = objectMapper.writeValueAsString(userAuthenticated);
+            response.setContentType("application/json");
+            response.getOutputStream().print(authenticationResponse);
         } catch (IOException exception) {
             exception.printStackTrace();
         }

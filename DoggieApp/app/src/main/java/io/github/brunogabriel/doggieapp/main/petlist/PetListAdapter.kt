@@ -31,10 +31,14 @@ class PetListAdapter(private val pets: List<Pet>) : RecyclerView.Adapter<PetList
             if (pet.images?.isNotEmpty() == true) {
                 pet_image.loadImage(pet.images[0])
             } else {
-                // TODO: add if empty image
+                pet_image.setImageDrawable(null)
             }
             pet_name.text = pet.name
-            pet_services_text.text = "13 Serviços" // TODO: vir no mock
+            pet_services_text.text = when(pet.quantityOfServices) {
+                0 -> itemView.context.getString(R.string.no_services)
+                1 -> itemView.context.getString(R.string.one_service)
+                else -> itemView.context.getString(R.string.plural_services, pet.quantityOfServices)
+            }
         }
     }
 }

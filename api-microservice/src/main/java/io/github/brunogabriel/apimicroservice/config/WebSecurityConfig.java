@@ -31,6 +31,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // memory users to simulate authentication
-        auth.inMemoryAuthentication().withUser("admin").password("{noop}root").roles("ADMIN");
+
+        // admins
+        auth.inMemoryAuthentication().withUser("admin").password("{noop}rootroot").roles("ADMIN");
+
+        // users
+        auth.inMemoryAuthentication().withUser("bruno").password("{noop}qwerty").roles("USER");
+        auth.inMemoryAuthentication().withUser("professor").password("{noop}123456").roles("USER");
+        auth.inMemoryAuthentication().withUser("pucminas").password("{noop}rootroot").roles("USER");
     }
 }

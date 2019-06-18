@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import io.github.brunogabriel.doggieapp.R
 import io.github.brunogabriel.doggieapp.shared.extensions.pxToDp
 import io.github.brunogabriel.doggieapp.shared.models.Pet
+import io.github.brunogabriel.doggieapp.shared.persistence.UserAuthenticationPersistence
 import io.github.brunogabriel.doggieapp.shared.view.EqualGapItemDecoration
 import kotlinx.android.synthetic.main.fragment_pet_list.*
 
@@ -26,31 +27,20 @@ class PetListFragment : Fragment(), PetListContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showPets(listOf(
-            Pet(1L, 1L, "Cachorro", "Bob", "Medium", emptyList(), emptyList(), emptyList(),
-                listOf("http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png")),
-            Pet(1L, 1L, "Cachorro", "Billy", "Medium", emptyList(), emptyList(), emptyList(),
-                listOf("http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png")),
-            Pet(1L, 1L, "Cachorro", "Billy", "Medium", emptyList(), emptyList(), emptyList(),
-                listOf("http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png")),
-            Pet(1L, 1L, "Cachorro", "Billy", "Medium", emptyList(), emptyList(), emptyList(),
-                listOf("http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png")),
-            Pet(1L, 1L, "Cachorro", "Billy", "Medium", emptyList(), emptyList(), emptyList(),
-                listOf("http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png")),
-            Pet(1L, 1L, "Cachorro", "Billy", "Medium", emptyList(), emptyList(), emptyList(),
-                listOf("http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png")),
-            Pet(1L, 1L, "Cachorro", "Billy", "Medium", emptyList(), emptyList(), emptyList(),
-                listOf("http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png")),Pet(1L, 1L, "Cachorro", "Billy", "Medium", emptyList(), emptyList(), emptyList(),
-                listOf("http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png")),
-            Pet(1L, 1L, "Cachorro", "Billy", "Medium", emptyList(), emptyList(), emptyList(),
-                listOf("http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png")),
-
-            Pet(1L, 1L, "Cavalo", "Pé de Pano", null, emptyList(), emptyList(), emptyList(),
-                listOf("https://hopereins.org/wp-content/uploads/2018/06/Hope-Reins-Horse-Stories-Deetz-800x600.jpg"))))
+        presenter = PetListPresenter(
+            this,
+            UserAuthenticationPersistence(context!!).loadUserAuthenticated()!!
+        ).apply {
+            initialize()
+        }
+        try_again_button.setOnClickListener {
+            presenter.initialize()
+        }
     }
 
     override fun showPets(pets: List<Pet>) {
         recycler_view.apply {
+            visibility = View.VISIBLE
             layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             adapter = PetListAdapter(pets)
             addItemDecoration(EqualGapItemDecoration(2, 16.pxToDp()))
@@ -58,18 +48,19 @@ class PetListFragment : Fragment(), PetListContract.View {
     }
 
     override fun showEmptyResult() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        empty_view.visibility = View.VISIBLE
     }
 
     override fun showTryAgain() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        try_again_view.visibility = View.VISIBLE
     }
 
     override fun showLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        try_again_view.visibility = View.GONE
+        loading_view.visibility = View.VISIBLE
     }
 
     override fun dismissLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        loading_view.visibility = View.GONE
     }
 }

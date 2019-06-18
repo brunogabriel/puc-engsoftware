@@ -13,5 +13,6 @@ interface PetListContract {
     }
 
     interface Presenter {
+        fun initialize()
     }
 }

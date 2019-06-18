@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">DoggieApp</string>
+    <string name="yes_text">Sim</string>
+    <string name="no_text">Não</string>
+    <string name="username">Usuário</string>
+    <string name="password">Senha</string>
+    <string name="enter">Entrar</string>
+    <string name="loading">Carregando…</string>
+    <string name="my_pets">Meus pets</string>
+    <string name="settings">Configurações</string>
+    <string name="pet_image">Imagem do Pet</string>
+    <string name="services">Serviços</string>
+    <string name="understood">Entendi</string>
+    <string name="try_again_message">Ops… não foi carregar os dados</string>
+    <string name="try_again">Tentar novamente</string>
+    <string name="empty_message_pets">Ops… parece que você não possui nenhum bichinho cadastrado</string>
+    <string name="logout">Sair da conta</string>
+    <string name="logout_message">Tem certeza que deseja sair da sua conta?</string>
+
+    <string name="loading_quotes">Uma lambida vale mais do que 1000 palavras</string>
+
+    <string name="invalid_username">O usuário deve ter o menos 3 caracteres</string>
+    <string name="invalid_password">A senha deve ter ao menos 6 caracteres</string>
+
+    <string name="user_not_found_message">Ops…algo aconteceu com seu usuário, verifique seus dados e tente novamente</string>
+
+    <string name="no_services">Sem serviços</string>
+    <string name="one_service">1 serviço</string>
+    <string name="plural_services">%d serviços</string>
+
+    <string name="welcome_pattern">Olá, %s</string>
+    <string name="pataz_message">Você possui 102 Pzs no programa fidelidade</string>
+</resources>
