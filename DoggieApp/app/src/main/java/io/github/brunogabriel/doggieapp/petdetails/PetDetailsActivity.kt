@@ -8,10 +8,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import com.squareup.picasso.Picasso
 import io.github.brunogabriel.doggieapp.R
-import io.github.brunogabriel.doggieapp.shared.models.Pet
+import io.github.brunogabriel.doggieapp.shared.models.Service
+import io.github.brunogabriel.doggieapp.shared.persistence.UserAuthenticationPersistence
 import kotlinx.android.synthetic.main.activity_pet_details.*
 import kotlinx.android.synthetic.main.content_pet_details.*
 
@@ -31,7 +34,8 @@ class PetDetailsActivity : AppCompatActivity(), PetDetailsContract.View {
         setContentView(R.layout.activity_pet_details)
         setupView()
 
-        presenter = PetDetailsPresenter(this, intent.getParcelableExtra(PET_DETAILS)).apply {
+        presenter = PetDetailsPresenter(this, intent.getParcelableExtra(PET_DETAILS),
+            UserAuthenticationPersistence(this).loadUserAuthenticated()!!).apply {
             initialize()
         }
     }
@@ -98,5 +102,36 @@ class PetDetailsActivity : AppCompatActivity(), PetDetailsContract.View {
             container.removeView(`object` as ImageView)
         }
         override fun getCount() = images.size
+    }
+
+    override fun showEmptyResult() {
+        empty_view.visibility = View.VISIBLE
+    }
+
+    override fun showServices(services: List<Service>) {
+        services_index_text.visibility = View.VISIBLE
+        recycler_view.apply {
+            visibility = View.VISIBLE
+            val layoutManager = LinearLayoutManager(this@PetDetailsActivity)
+            setLayoutManager(layoutManager)
+            isNestedScrollingEnabled = false
+            adapter = PetServicesAdapter(services)
+        }
+    }
+
+    override fun showTryAgain() {
+        try_again_view.apply {
+            visibility = View.VISIBLE
+            try_again_button.setOnClickListener { presenter.onSelectedTryAgain() }
+        }
+    }
+
+    override fun showLoading() {
+        try_again_view.visibility = View.GONE
+        loading_view.visibility = View.VISIBLE
+    }
+
+    override fun dismissLoading() {
+        loading_view.visibility = View.GONE
     }
 }

@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "petId": 1,
+    "type": "Vacinação",
+    "duration": 15,
+    "price": 300.00,
+    "date": "17/05/2019",
+    "doneBy": "Veterinário Pedro",
+    "products": [
+      "Seringa descartável",
+      "Dog Licious Bone para Cães Adultos Sabor Carne - 80g"
+    ],
+    "annotations": [
+      "Estava com medo durante vacinação"
+    ]
+  },
+  {
+    "id": 2,
+    "petId": 1,
+    "type": "Banho & Tosa",
+    "duration": 120,
+    "price": 125.99,
+    "date": "20/04/2019",
+    "doneBy": "Atendente Amanda",
+    "products": [
+      "Dog Licious Bone para Cães Adultos Sabor Carne - 80g",
+      "Perfume Pet Essence Escondendo Ossinho 60ml"
+    ],
+    "annotations": []
+  },
+  {
+    "id": 3,
+    "petId": 2,
+    "type": "Vacinação",
+    "duration": 25,
+    "price": 599.99,
+    "date": "01/06/2019",
+    "doneBy": "Veterinário Pedro",
+    "products": [
+      "Vacina Tétano",
+      "Rinopneumonite (EHV-1 e EHV-4)"
+    ],
+    "annotations": [
+      "Estava agitado",
+      "1ª dose de ambas as vacinas"
+    ]
+  },
+  {
+    "id": 4,
+    "petId": 3,
+    "type": "Consulta",
+    "duration": 30,
+    "price": 1200.00,
+    "date": "10/06/2019",
+    "doneBy": "Veterinário Pedro",
+    "products": [],
+    "annotations": [
+      "Voltou pois continuou a apresentar os sintomas de vômito e diarréias",
+      "Ficou internado para observação"
+    ]
+  },
+  {
+    "id": 5,
+    "petId": 3,
+    "type": "Consulta",
+    "duration": 30,
+    "price": 200.00,
+    "date": "04/06/2019",
+    "doneBy": "Veterinário Pedro",
+    "products": [],
+    "annotations": [
+      "Diárreia e vômitos constantes, foi indicato um antiviral",
+      "Indicado para o paciente não se alimentar em 24 horas, caso persista os sintomas retornar"
+    ]
+  },
+  {
+    "id": 4,
+    "petId": 3,
+    "type": "Banho",
+    "duration": 30,
+    "price": 200.00,
+    "date": "02/01/2019",
+    "doneBy": "Atendente Ricardo",
+    "products": [
+      "Banho a Seco Vet + Para Gatos - 250ml"
+    ],
+    "annotations": []
+  }
+]

@@ -11,9 +11,10 @@
     <string name="pet_image">Imagem do Pet</string>
     <string name="services">Serviços</string>
     <string name="understood">Entendi</string>
-    <string name="try_again_message">Ops… não foi carregar os dados</string>
+    <string name="try_again_message">Ops… não foi possível carregar os dados</string>
     <string name="try_again">Tentar novamente</string>
     <string name="empty_message_pets">Ops… parece que você não possui nenhum bichinho cadastrado</string>
+    <string name="empty_message_services">Ops… parece que você não possui nenhum serviço realizado</string>
     <string name="logout">Sair da conta</string>
     <string name="logout_message">Tem certeza que deseja sair da sua conta?</string>
 
@@ -29,8 +30,10 @@
     <string name="plural_services">%d serviços</string>
 
     <string name="welcome_pattern">Olá, %s</string>
+    <string name="minutes_pattern">%d minutos</string>
     <string name="pataz_message">Você possui 102 Pzs no programa fidelidade</string>
     <string name="type">Tipo</string>
+    <string name="service_type">Serviço realizado</string>
     <string name="gait">Porte</string>
     <string name="allergies">Alergias</string>
     <string name="habits">Hábitos</string>

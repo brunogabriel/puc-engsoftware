@@ -2,7 +2,7 @@ package io.github.brunogabriel.apimicroservice.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.brunogabriel.apimicroservice.domain.Pet;
+import io.github.brunogabriel.apimicroservice.domain.Service;
 import io.github.brunogabriel.apimicroservice.utils.ApplicationUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,31 +12,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.InputStream;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
-import static io.github.brunogabriel.apimicroservice.utils.ApplicationUtils.simulateTimeout;
-
 /**
- * Created by brunogabriel on 2019-06-17.
+ * Created by brunogabriel on 2019-06-19.
  */
 @RestController
-@RequestMapping("/api/pets")
-public class PetController {
-
-    @GetMapping("/{clientId}")
-    public ResponseEntity<List<Pet>> findAll(@PathVariable String clientId) {
+@RequestMapping("/api/services")
+public class ServiceController {
+    @GetMapping("/{petId}")
+    public ResponseEntity<List<Service>> findAll(@PathVariable Long petId) {
         try {
-            InputStream inputStream = TypeReference.class.getResourceAsStream("/mock/pets_mock.json");
-            List<Pet> pets = new ObjectMapper().readValue(inputStream, new TypeReference<List<Pet>>(){});
-            List<Pet> filteredPets = pets.stream()
-                    .filter(it -> it.clientId.equals(clientId))
+            InputStream inputStream = TypeReference.class.getResourceAsStream("/mock/services_mock.json");
+            List<Service> services = new ObjectMapper().readValue(inputStream, new TypeReference<List<Service>>() {});
+            List<Service> filteredServices = services.stream()
+                    .filter(it -> it.petId.equals(petId))
                     .collect(Collectors.toList());
             ApplicationUtils.simulateTimeout();
-            return ResponseEntity.ok(filteredPets);
+            return ResponseEntity.ok(filteredServices);
         } catch (Exception exception) {
             return ResponseEntity.badRequest().build();
         }
     }
 }
-
