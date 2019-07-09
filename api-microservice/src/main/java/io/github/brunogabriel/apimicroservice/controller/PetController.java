@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.InputStream;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
-
-import static io.github.brunogabriel.apimicroservice.utils.ApplicationUtils.simulateTimeout;
 
 /**
  * Created by brunogabriel on 2019-06-17.

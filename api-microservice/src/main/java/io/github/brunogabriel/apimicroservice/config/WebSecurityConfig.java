@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 
+import java.util.Arrays;
+
 /**
  * Created by brunogabriel on 2019-06-13.
  */
@@ -21,7 +23,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
+                .cors().configurationSource(request -> {
+                    CorsConfiguration corsConfiguration = new CorsConfiguration().applyPermitDefaultValues();
+                    corsConfiguration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
+                    return corsConfiguration;
+                })
                 .and()
                 .csrf().disable().authorizeRequests()
                 .antMatchers("/home").permitAll()
