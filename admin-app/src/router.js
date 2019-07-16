@@ -5,6 +5,7 @@ import Login from './components/Login.vue'
 import Home from './components/Home.vue'
 import ProductType from './components/ProductType.vue'
 import Manufacturer from './components/Manufacturer.vue'
+import Product from './components/Product.vue'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ const router = new Router({
       component: Manufacturer
     },
     {
+      path: '/produtos',
+      name: 'Produtos',
+      component: Product
+    },
+    {
       path: '*',
       redirect: '/login'
     }
@@ -50,7 +56,7 @@ router.beforeEach((to, from, next) => {
       next('/home')
     }
   }
-  if (to.fullPath === '/tiposDeProduto' || to.fullPath === '/fabricantes') {
+  if (to.fullPath === '/tiposDeProduto' || to.fullPath === '/fabricantes' || to.fullPath === '/produtos') {
     if (!store.state.accessToken) {
       next('/login')
     }
