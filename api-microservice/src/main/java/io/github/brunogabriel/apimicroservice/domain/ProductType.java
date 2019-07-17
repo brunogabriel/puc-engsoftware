@@ -14,6 +14,15 @@ import java.util.List;
 @EqualsAndHashCode
 @Entity
 public class ProductType {
+
+    public ProductType() { }
+
+    public ProductType(Long id, String name, List<Product> products) {
+        this.id = id;
+        this.name = name;
+        this.products = products;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

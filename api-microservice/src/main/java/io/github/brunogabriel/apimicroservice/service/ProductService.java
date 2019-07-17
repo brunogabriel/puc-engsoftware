@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class ProductService {
     @Autowired
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
 
     public List<Product> findAll() {
         return productRepository.findAll();

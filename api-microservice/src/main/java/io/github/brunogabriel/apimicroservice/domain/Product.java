@@ -13,6 +13,9 @@ import javax.validation.constraints.NotNull;
 @EqualsAndHashCode
 @Entity
 public class Product {
+
+    public Product() { }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
