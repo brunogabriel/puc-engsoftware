@@ -44,19 +44,17 @@ const router = new Router({
   ]
 })
 
+const internalPaths = [
+  "/home", "/tiposDeProduto", "/fabricantes", "/produtos"
+]
 router.beforeEach((to, from, next) => {
   store.dispatch('fetchAccessToken')
-  if (to.fullPath === '/home') {
-    if (!store.state.accessToken) {
-      next('/login')
-    }
-  }
   if (to.fullPath === '/login') {
     if (store.state.accessToken) {
       next('/home')
     }
   }
-  if (to.fullPath === '/tiposDeProduto' || to.fullPath === '/fabricantes' || to.fullPath === '/produtos') {
+  if (to.fullPath in internalPaths) {
     if (!store.state.accessToken) {
       next('/login')
     }

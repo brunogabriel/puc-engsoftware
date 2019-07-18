@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app id="list-grid">
+    <v-app id="list-grid" style="background-color:white;">
       <v-toolbar flat color="white">
         <v-toolbar-title>Tipos de produtos</v-toolbar-title>
         <v-divider class="mx-2" inset vertical></v-divider>
