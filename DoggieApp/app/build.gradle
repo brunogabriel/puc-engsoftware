@@ -17,12 +17,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField "String", "base_url", '"http://192.168.1.40:8080"'
+            buildConfigField "String", "base_url", '"http://192.168.1.38:9090"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
-            buildConfigField "String", "base_url", '"http://192.168.1.40:8080"'
+            buildConfigField "String", "base_url", '"http://192.168.1.38:9090"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
