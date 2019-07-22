@@ -61,7 +61,12 @@ export default {
           icon: 'list',
           title: 'Tipos de produtos',
           path: '/tiposDeProduto',
-        }, 
+        },
+        {
+          icon: 'print',
+          title: 'Relatórios',
+          path: '/relatorios',
+        },
         {
           icon: 'exit_to_app',
           title: 'Logout',

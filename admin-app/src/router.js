@@ -6,6 +6,7 @@ import Home from './components/Home.vue'
 import ProductType from './components/ProductType.vue'
 import Manufacturer from './components/Manufacturer.vue'
 import Product from './components/Product.vue'
+import Report from './components/Report.vue'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ const router = new Router({
       component: Product
     },
     {
+      path: '/relatorios',
+      name: 'Relatórios',
+      component: Report
+    },
+    {
       path: '*',
       redirect: '/login'
     }
@@ -45,7 +51,7 @@ const router = new Router({
 })
 
 const internalPaths = [
-  "/home", "/tiposDeProduto", "/fabricantes", "/produtos"
+  "/home", "/tiposDeProduto", "/fabricantes", "/produtos", "/relatorios"
 ]
 router.beforeEach((to, from, next) => {
   store.dispatch('fetchAccessToken')

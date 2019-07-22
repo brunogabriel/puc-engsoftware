@@ -1,6 +1,6 @@
 [
     {
-      "doneBy": "Pedro Paulo da Silva",
+      "employee": "Pedro Paulo da Silva",
       "clientName": "Vanessa de Matos",
       "petName": "Bulbasaur",
       "type": "Vacinação",
@@ -9,7 +9,7 @@
       "date": "01/01/2019"
     },
     {
-        "doneBy": "Pedro Paulo da Silva",
+        "employee": "Pedro Paulo da Silva",
         "clientName": "Joice da Silva",
         "petName": "Ivysaur",
         "type": "Vacinação",
@@ -18,7 +18,7 @@
         "date": "03/01/2019"
     },
     {
-        "doneBy": "Pedro Paulo da Silva",
+        "employee": "Pedro Paulo da Silva",
         "clientName": "Cleópatra de Albuquerque",
         "petName": "Venusaur",
         "type": "Tosa & Banho",
@@ -27,7 +27,7 @@
         "date": "10/01/2019"
     },
     {
-        "doneBy": "Pedro Paulo da Silva",
+        "employee": "Pedro Paulo da Silva",
         "clientName": "José Pereira",
         "petName": "Charmander",
         "type": "Tosa & Banho",
@@ -36,7 +36,7 @@
         "date": "20/01/2019"
     },
     {
-        "doneBy": "Pedro Paulo da Silva",
+        "employee": "Pedro Paulo da Silva",
         "clientName": "José Pereira",
         "petName": "Billy",
         "type": "Vacinação",
@@ -45,7 +45,7 @@
         "date": "22/01/2019"
     },
     {
-        "doneBy": "Pedro Paulo da Silva",
+        "employee": "Pedro Paulo da Silva",
         "clientName": "José Pereira",
         "petName": "Pé de Pano",
         "type": "Vacinação",
@@ -54,7 +54,7 @@
         "date": "22/01/2019"
     },
     {
-        "doneBy": "Pedro Paulo da Silva",
+        "employee": "Pedro Paulo da Silva",
         "clientName": "Brandon Lee",
         "petName": "Rufus",
         "type": "Tosa & Banho",
@@ -63,7 +63,7 @@
         "date": "04/02/2019"
     },
     {
-        "doneBy": "Pedro Paulo da Silva",
+        "employee": "Pedro Paulo da Silva",
         "clientName": "Regina Albuquerque",
         "petName": "Valentina",
         "type": "Tosa & Banho",
@@ -72,7 +72,7 @@
         "date": "10/02/2019"
     },
     {
-        "doneBy": "Joana D'arc",
+        "employee": "Joana D'arc",
         "clientName": "Steve dos Santos",
         "petName": "Branquinho",
         "type": "Tosa & Banho",
@@ -81,7 +81,7 @@
         "date": "01/03/2019"
     },
     {
-        "doneBy": "Joana D'arc",
+        "employee": "Joana D'arc",
         "clientName": "Steve dos Santos",
         "petName": "Branquinho",
         "type": "Vacinação",
@@ -90,7 +90,7 @@
         "date": "01/03/2019"
     },
     {
-        "doneBy": "Joana D'arc",
+        "employee": "Joana D'arc",
         "clientName": "Steve dos Santos",
         "petName": "Bella",
         "type": "Banho",
@@ -99,7 +99,7 @@
         "date": "01/03/2019"
     },
     {
-        "doneBy": "Joana D'arc",
+        "employee": "Joana D'arc",
         "clientName": "Steve dos Santos",
         "petName": "Bella",
         "type": "Banho",
@@ -108,7 +108,7 @@
         "date": "10/04/2019"
     },
     {
-        "doneBy": "Joana D'arc",
+        "employee": "Joana D'arc",
         "clientName": "Steve dos Santos",
         "petName": "Bella",
         "type": "Banho",
@@ -117,7 +117,7 @@
         "date": "10/05/2019"
     },
     {
-        "doneBy": "Bruno Santos",
+        "employee": "Bruno Santos",
         "clientName": "Daniele Pasquarelli",
         "petName": "Lulu",
         "type": "Banho",
@@ -126,7 +126,7 @@
         "date": "10/06/2019"
     },
     {
-        "doneBy": "Bruno Santos",
+        "employee": "Bruno Santos",
         "clientName": "Rogério Rodrigues",
         "petName": "Squirtle",
         "type": "Tosa & Banho",
@@ -135,7 +135,7 @@
         "date": "10/06/2019"
     },
     {
-        "doneBy": "Bruno Santos",
+        "employee": "Bruno Santos",
         "clientName": "Rogério Rodrigues",
         "petName": "Pikachu",
         "type": "Vacinação",
@@ -144,7 +144,7 @@
         "date": "04/08/2019"
     },
     {
-        "doneBy": "Pedro Paulo da Silva",
+        "employee": "Pedro Paulo da Silva",
         "clientName": "Vanessa de Matos",
         "petName": "Bulbasaur",
         "type": "Vacinação",
@@ -153,7 +153,7 @@
         "date": "01/08/2019"
       },
       {
-          "doneBy": "Pedro Paulo da Silva",
+          "employee": "Pedro Paulo da Silva",
           "clientName": "Joice da Silva",
           "petName": "Ivysaur",
           "type": "Vacinação",
@@ -162,7 +162,7 @@
           "date": "03/08/2019"
       },
       {
-          "doneBy": "Pedro Paulo da Silva",
+          "employee": "Pedro Paulo da Silva",
           "clientName": "Cleópatra de Albuquerque",
           "petName": "Venusaur",
           "type": "Tosa & Banho",
@@ -171,7 +171,7 @@
           "date": "10/08/2019"
       },
       {
-        "doneBy": "Joana D'arc",
+        "employee": "Joana D'arc",
         "clientName": "Steve dos Santos",
         "petName": "Branquinho",
         "type": "Tosa & Banho",
@@ -180,7 +180,7 @@
         "date": "01/08/2019"
     },
     {
-        "doneBy": "Joana D'arc",
+        "employee": "Joana D'arc",
         "clientName": "Steve dos Santos",
         "petName": "Branquinho",
         "type": "Vacinação",

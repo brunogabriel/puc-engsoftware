@@ -20,7 +20,7 @@ public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    public String doneBy;
+    public String employee;
     public String clientName;
     public String petName;
     public String type;
