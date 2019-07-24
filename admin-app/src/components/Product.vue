@@ -20,15 +20,20 @@
               <v-container grid-list-md>
                 <v-layout wrap>
                   <v-flex>
-                    <v-text-field v-model="editedItem.name" label="Nome"/>
-                    <v-text-field v-model="editedItem.specifications" label="Especificações"/>
-                    <v-text-field v-model="editedItem.flavor" label="Sabor"/>
-                    <v-text-field v-model="editedItem.material" label="Material"/>
-                    <v-text-field v-model="editedItem.indication" label="Indicação"/>
-                    <v-select v-model="editedItem.productType" :items="productTypes" 
-                        item-text="name" item-value="name" label="Tipo de produto" return-object/>
-                    <v-select v-model="editedItem.manufacturer" :items="manufacturers" 
-                        item-text="name" item-value="name" label="Fornecedor" return-object/>
+                    <v-form ref="form" v-model="valid" lazy-validation>
+                      <v-text-field v-model="editedItem.name" label="Nome" 
+                      :rules="nameRules" required return-object/>
+                      <v-select v-model="editedItem.productType" :items="productTypes" 
+                          item-text="name" item-value="name" label="Tipo de produto" return-object
+                          :rules="productTypeRules" required return-object/>
+                      <v-select v-model="editedItem.manufacturer" :items="manufacturers" 
+                          item-text="name" item-value="name" label="Fornecedor" 
+                          :rules="manufacturersRules" required return-object/>
+                      <v-text-field v-model="editedItem.specifications" label="Especificações"/>
+                      <v-text-field v-model="editedItem.flavor" label="Sabor"/>
+                      <v-text-field v-model="editedItem.material" label="Material"/>
+                      <v-text-field v-model="editedItem.indication" label="Indicação"/>
+                    </v-form>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -36,7 +41,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-              <v-btn color="blue darken-1" flat @click="save">Salvar</v-btn>
+              <v-btn color="blue darken-1" flat @click="save" :disabled="!valid">Salvar</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
@@ -112,7 +117,17 @@ export default {
         indication: "",
         manufacturer: null,
         productType: null
-      }
+      },
+      valid: true,
+      nameRules: [
+         v => !!v || 'Nome é obrigatório'
+      ],
+      manufacturersRules: [
+        v => !!v || 'Fornecedor é obrigatório'
+      ],
+      productTypeRules: [
+        v => !!v || 'Tipo de produto é obrigatório'
+      ]
     }
   },
   computed: {
@@ -154,34 +169,38 @@ export default {
       setTimeout(() => {
         this.editedItem = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
+        this.$refs.form.reset()
+        this.valid = true
       }, 300)
     },
 
     save() {
-      const element = this.editedItem
-      if (this.editedIndex > -1) {
-        axios.put(Constants.API_PRODUCTS + element.id, {
-          ...element
-        })
-        .then(response => {
-          this.loadProducts()
-        }).catch(error => {
-          this.responseErrorMessage = "Não foi possível atualizar os dados do produto"
-          this.responseErrorEnabled = true
-        })
-      } else {
-        axios.post(Constants.API_PRODUCTS, {
-          ...element
-        })
-        .then(response => {
-          this.loadProducts()
-        })
-        .catch(error => {
-          this.responseErrorMessage = "Não foi possível salvar o produto"
-          this.responseErrorEnabled = true
-        })
+      if (this.$refs.form.validate()) {
+        const element = this.editedItem
+        if (this.editedIndex > -1) {
+          axios.put(Constants.API_PRODUCTS + element.id, {
+            ...element
+          })
+          .then(response => {
+            this.loadProducts()
+          }).catch(error => {
+            this.responseErrorMessage = "Não foi possível atualizar os dados do produto"
+            this.responseErrorEnabled = true
+          })
+        } else {
+          axios.post(Constants.API_PRODUCTS, {
+            ...element
+          })
+          .then(response => {
+            this.loadProducts()
+          })
+          .catch(error => {
+            this.responseErrorMessage = "Não foi possível salvar o produto"
+            this.responseErrorEnabled = true
+          })
+        }
+        this.close()
       }
-      this.close()
     },
 
     loadProducts() {
