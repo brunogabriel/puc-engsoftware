@@ -10,6 +10,6 @@ data class Service(
     val duration: Int,
     val price: Double,
     val date: String,
-    val doneBy: String,
+    val employee: String,
     val products: List<String>?,
     val annotations: List<String>?)

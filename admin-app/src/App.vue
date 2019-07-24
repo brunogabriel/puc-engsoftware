@@ -97,4 +97,7 @@ export default {
   .v-content {
     background-color:white;
   }
+  .v-navigation-drawer {
+    padding-top: 8px;
+  }
 </style>
