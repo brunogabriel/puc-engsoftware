@@ -20,7 +20,9 @@
               <v-container grid-list-md>
                 <v-layout wrap>
                   <v-flex>
-                    <v-text-field v-model="editedItem.name" label="Nome"></v-text-field>
+                  <v-form ref="form" v-model="valid" lazy-validation>
+                    <v-text-field v-model="editedItem.name" label="Nome" :rules="nameRules" required></v-text-field>
+                  </v-form>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -29,7 +31,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-              <v-btn color="blue darken-1" flat @click="save">Salvar</v-btn>
+              <v-btn color="blue darken-1" flat @click="save" :disabled="!valid">Salvar</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
@@ -87,7 +89,11 @@ export default {
       defaultItem: {
         id: 0,
         name: ""
-      }
+      },
+      valid: true,
+      nameRules: [
+         v => !!v || 'Nome é obrigatório'
+      ]
     }
   },
   computed: {
@@ -127,34 +133,38 @@ export default {
       setTimeout(() => {
         this.editedItem = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
+        this.$refs.form.reset()
+        this.valid = true
       }, 300)
     },
 
     save() {
-      const element = this.editedItem
-      if (this.editedIndex > -1) {
-        axios.put(Constants.API_PRODUCT_TYPES + element.id, {
-          ...element
-        })
-        .then(response => {
-          this.loadProductTypes()
-        }).catch(error => {
-          this.responseErrorMessage = "Não foi possível atualizar os dados do tipo de produto"
-          this.responseErrorEnabled = true
-        })
-      } else {
-        axios.post(Constants.API_PRODUCT_TYPES, {
-          ...element
-        })
-        .then(response => {
-          this.loadProductTypes()
-        })
-        .catch(error => {
-          this.responseErrorMessage = "Não foi possível salvar o tipo de produto"
-          this.responseErrorEnabled = true
-        })
+      if (this.$refs.form.validate()) {
+        const element = this.editedItem
+        if (this.editedIndex > -1) {
+          axios.put(Constants.API_PRODUCT_TYPES + element.id, {
+            ...element
+          })
+          .then(response => {
+            this.loadProductTypes()
+          }).catch(error => {
+            this.responseErrorMessage = "Não foi possível atualizar os dados do tipo de produto"
+            this.responseErrorEnabled = true
+          })
+        } else {
+          axios.post(Constants.API_PRODUCT_TYPES, {
+            ...element
+          })
+          .then(response => {
+            this.loadProductTypes()
+          })
+          .catch(error => {
+            this.responseErrorMessage = "Não foi possível salvar o tipo de produto"
+            this.responseErrorEnabled = true
+          })
+        }
+        this.close()
       }
-      this.close()
     },
 
     loadProductTypes() {

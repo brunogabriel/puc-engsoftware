@@ -34,7 +34,7 @@ class PetServicesAdapter(private val services: List<Service>) : RecyclerView.Ada
             service_type_text.text = service.type
             duration_text.text = "${service.date} | ${context.getString(R.string.minutes_pattern, service.duration)}"
             price_text.text = currencyFormatter.format(service.price)
-            owner_text.text = service.doneBy
+            owner_text.text = service.employee
 
             if (service.products != null && service.products.isNotEmpty()) {
                 products.visibility = View.VISIBLE
