@@ -7,7 +7,7 @@
         <v-divider class="mx-2" inset vertical></v-divider>
         <v-spacer></v-spacer>
         <template>
-            <v-btn color="primary" class="mb-2" @click="loadReports" :disabled="!valid">Filtrar</v-btn>
+            <v-btn round color="primary" class="mb-2" @click="loadReports" :disabled="!valid">Filtrar</v-btn>
           </template>
       </v-toolbar>
     

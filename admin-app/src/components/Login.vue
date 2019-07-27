@@ -21,9 +21,8 @@
 
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="primary" @click="authenticate" :disabled="!valid">Entrar</v-btn>
+                  <v-btn color="primary" round @click="authenticate" :disabled="!valid">Entrar</v-btn>
                 </v-card-actions>
-
               </v-card>
             </v-flex>
           </v-layout>
