@@ -8,7 +8,7 @@
 
         <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ on }">
-            <v-btn color="primary" dark class="mb-2" v-on="on">Novo produto</v-btn>
+            <v-btn round color="primary" dark class="mb-2" v-on="on">Novo produto</v-btn>
           </template>
           <v-card>
 
@@ -24,7 +24,7 @@
                       <v-text-field v-model="editedItem.name" label="Nome" 
                       :rules="nameRules" required return-object/>
                       <v-select v-model="editedItem.productType" :items="productTypes" 
-                          item-text="name" item-value="name" label="Tipo de produto" return-object
+                          item-text="name" item-value="name" label="Tipo de produto"
                           :rules="productTypeRules" required return-object/>
                       <v-select v-model="editedItem.manufacturer" :items="manufacturers" 
                           item-text="name" item-value="name" label="Fornecedor" 
@@ -40,8 +40,8 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-              <v-btn color="blue darken-1" flat @click="save" :disabled="!valid">Salvar</v-btn>
+              <v-btn round color="primary" flat @click="close">Cancelar</v-btn>
+              <v-btn round color="primary" flat @click="save" :disabled="!valid">Salvar</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>

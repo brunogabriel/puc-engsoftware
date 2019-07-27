@@ -87,7 +87,7 @@ export default {
     doLogout(title) {
       if (title === 'Logout') {
         this.logout()
-      }
+      } 
     }
   }
 }
