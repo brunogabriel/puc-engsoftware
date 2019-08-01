@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "clientId": "bruno",
+    "type": "Cachorro",
+    "name": "Bob",
+    "gait": "Pequeno",
+    "allergies": [
+      "Chocolate",
+      "Cerveja",
+      "Milho"
+    ],
+    "habits": [
+      "Caminhar às 16hs"
+    ],
+    "preferences": [
+      "Bananas",
+      "Maçã"
+    ],
+    "images": [
+      "http://portalmelhoresamigos.com.br/wp-content/uploads/2015/11/poodle_cachorro.png",
+      "https://blogbergvet.com.br/wp-content/uploads/2016/11/DSC00794.jpg"
+    ],
+    "quantityOfServices": 2
+  },
+  {
+    "id": 2,
+    "clientId": "bruno",
+    "type": "cavalo",
+    "name": "Pé de Pano",
+    "allergies": [
+      "Couve"
+    ],
+    "habits": [
+      "Usar acessórios pretos"
+    ],
+    "preferences": [
+      "Gosta de se alimentar com milho",
+      "Não gosta de beterraba"
+    ],
+    "images": [
+      "https://hopereins.org/wp-content/uploads/2018/06/Hope-Reins-Horse-Stories-Deetz-800x600.jpg",
+      "https://redmills.ie/wp-content/uploads/2015/10/horse-shine-3-800x600-c-center.jpg"
+    ],
+    "quantityOfServices": 1
+  },
+  {
+    "id": 3,
+    "clientId": "bruno",
+    "type": "gato",
+    "name": "Mingau",
+    "allergies": [],
+    "habits": [],
+    "preferences": [
+      "Bolas de lã na cor amarela",
+      "Não gosta de bolas de lã da cor verde"
+    ],
+    "images": [
+      "https://thumbs-prod.si-cdn.com/s-rtW1rEAQTIGcmUVNFSSPC4s3I=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/56/4a/564a542d-5c37-4be7-8892-98201ab13180/cat-2083492_1280.jpg"
+    ],
+    "quantityOfServices": 3
+  },
+  {
+    "id": 4,
+    "clientId": "professor",
+    "type": "papagaio",
+    "name": "Loro",
+    "allergies": [],
+    "habits": [],
+    "preferences": [],
+    "images": [
+      "https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia16511/papagaio-verdadeiro-cursos-cpt.jpg"
+    ],
+    "quantityOfServices": 0
+  }
+]
